@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications - Campus Hostel Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Student Portal</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="student-dashboard.html">Dashboard</a></li>
+                    <li><a href="hostels.html">View Rooms</a></li>
+                    <li><a href="applications.html" class="active">My Applications</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn btn-danger">Logout</button>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="user-info">
+                    <span id="userName">Loading...</span>
+                </div>
+            </header>
+            <div class="applications-content">
+                <h1>My Applications</h1>
+                <div id="applicationsList" class="applications-list">
+                    <div class="loading-message">Loading applications...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/auth.js"></script>
+    <script src="js/applications.js"></script>
+</body>
+</html> 

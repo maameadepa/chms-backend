@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Campus Hostel Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Admin Portal</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="admin-dashboard.html" id="navDashboard">Dashboard</a></li>
+                    <li><a href="admin-applications.html" id="navApplications">Housing Applications</a></li>
+                    <li><a href="admin-rooms.html" id="navRooms">Rooms</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn btn-danger">Logout</button>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="user-info">
+                    <span id="adminName">Admin</span>
+                </div>
+            </header>
+            <div class="admin-dashboard-content">
+                <section id="overviewSection" class="admin-section active">
+                    <h1>Welcome, Admin!</h1>
+                    <p>Use the sidebar to manage housing applications and rooms.</p>
+                </section>
+                <section id="applicationsSection" class="admin-section">
+                    <h1>Housing Applications</h1>
+                    <div id="adminApplicationsList" class="applications-list">
+                        <div class="loading-message">Loading applications...</div>
+                    </div>
+                </section>
+                <section id="roomsSection" class="admin-section">
+                    <h1>Rooms</h1>
+                    <button id="newRoomBtn" class="btn btn-primary">New Room</button>
+                    <div id="adminRoomsList" class="rooms-list">
+                        <div class="loading-message">Loading rooms...</div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html> 

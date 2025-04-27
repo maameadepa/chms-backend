@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms - Campus Hostel Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/hostels.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Student Portal</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="student-dashboard.html">Dashboard</a></li>
+                    <li><a href="hostels.html">View Rooms</a></li>
+                    <li><a href="applications.html">My Applications</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn btn-danger">Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="user-info">
+                    <span id="userName">Loading...</span>
+                </div>
+                <div class="header-actions">
+                    <button id="notificationsBtn" class="btn btn-icon">🔔</button>
+                </div>
+            </header>
+
+            <!-- Rooms Content -->
+            <div class="hostels-content">
+                <h1>Available Rooms</h1>
+                
+                <!-- Room Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="roomSearch" placeholder="Enter room number (e.g., A02)" class="search-input">
+                    <button id="searchBtn" class="btn btn-primary">Search</button>
+                </div>
+
+                <!-- Room Filters -->
+                <div class="filters">
+                    <select id="roomTypeFilter">
+                        <option value="all">All Room Types</option>
+                        <option value="single">Single</option>
+                        <option value="double">Double</option>
+                        <option value="triple">Triple</option>
+                        <option value="quad">Quad</option>
+                    </select>
+                    <select id="priceFilter">
+                        <option value="all">All Prices</option>
+                        <option value="low">Low to High</option>
+                        <option value="high">High to Low</option>
+                    </select>
+                </div>
+
+                <!-- Rooms Grid -->
+                <div id="roomsGrid" class="rooms-grid">
+                    <!-- Room cards will be loaded here -->
+                    <div class="loading-message">Loading rooms...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Room Details Modal -->
+    <div id="roomDetailsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Room Details</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="roomDetailsContent">
+                    <!-- Room details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/hostels.js"></script>
+</body>
+</html> 

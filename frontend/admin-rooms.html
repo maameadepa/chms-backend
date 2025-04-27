@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Rooms Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Admin Portal</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin-dashboard.html">Dashboard</a></li>
+                    <li><a href="admin-applications.html">Housing Applications</a></li>
+                    <li class="active"><a href="admin-rooms.html">Rooms</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn btn-danger">Logout</button>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="user-info">
+                    <span id="adminName">Admin</span>
+                </div>
+            </header>
+            <div class="admin-content">
+                <div class="content-header">
+                    <h1>Rooms Management</h1>
+                    <a href="admin-create-room.html" class="btn btn-primary">Create Room</a>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters">
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="single">Single</option>
+                        <option value="double">Double</option>
+                        <option value="triple">Triple</option>
+                        <option value="quad">Quad</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Search by room number...">
+                </div>
+
+                <!-- Rooms Grid -->
+                <div class="rooms-grid" id="roomsGrid">
+                    <div class="loading">Loading rooms...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Room Modal -->
+    <div id="roomModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">New Room</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="roomForm">
+                <div class="form-group">
+                    <label for="roomNumber">Room Number</label>
+                    <input type="text" id="roomNumber" name="room_number" required>
+                </div>
+                <div class="form-group">
+                    <label for="roomType">Room Type</label>
+                    <select id="roomType" name="room_type" required>
+                        <option value="single">Single</option>
+                        <option value="double">Double</option>
+                        <option value="triple">Triple</option>
+                        <option value="quad">Quad</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="occupancy">Occupancy Limit</label>
+                    <input type="number" id="occupancy" name="occupancy_limit" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price per Semester</label>
+                    <input type="number" id="price" name="price_per_semester" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="roomImage">Room Image</label>
+                    <select id="roomImage" name="image_url" required>
+                        <option value="">Select an image</option>
+                        <option value="img/room1.jpg">Room 1</option>
+                        <option value="img/room2.jpg">Room 2</option>
+                        <option value="img/room3.jpg">Room 3</option>
+                    </select>
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/admin-rooms.js"></script>
+</body>
+</html> 

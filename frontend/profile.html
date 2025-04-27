@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Campus Hostel Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Student Portal</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="student-dashboard.html">Dashboard</a></li>
+                    <li><a href="hostels.html">View Rooms</a></li>
+                    <li><a href="applications.html">My Applications</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                    <li class="active"><a href="profile.html">My Profile</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn btn-danger">Logout</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="user-info">
+                    <span id="userName"></span>
+                </div>
+                <div class="header-actions">
+                    <button id="notificationsBtn" class="btn btn-icon">🔔</button>
+                </div>
+            </header>
+
+            <div class="profile-container">
+                <section class="profile-header">
+                    <h2>My Profile</h2>
+                    <button id="editProfileBtn" class="btn btn-primary">Edit Profile</button>
+                </section>
+
+                <!-- Profile Information -->
+                <div class="profile-content">
+                    <div class="profile-section">
+                        <h3>Personal Information</h3>
+                        <div class="profile-info">
+                            <div class="profile-field">
+                                <label>Full Name</label>
+                                <p id="fullName">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Student ID</label>
+                                <p id="studentId">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Email</label>
+                                <p id="email">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Phone</label>
+                                <p id="phone">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Date of Birth</label>
+                                <p id="dob">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Gender</label>
+                                <p id="gender">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Academic Information</h3>
+                        <div class="profile-info">
+                            <div class="profile-field">
+                                <label>Program</label>
+                                <p id="program">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Year Level</label>
+                                <p id="yearLevel">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Department</label>
+                                <p id="department">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Enrollment Status</label>
+                                <p id="enrollmentStatus">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Housing Information</h3>
+                        <div class="profile-info">
+                            <div class="profile-field">
+                                <label>Current Room</label>
+                                <p id="currentRoom">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Room Type</label>
+                                <p id="roomType">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Check-in Date</label>
+                                <p id="checkInDate">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Expected Check-out</label>
+                                <p id="checkOutDate">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Emergency Contact</h3>
+                        <div class="profile-info">
+                            <div class="profile-field">
+                                <label>Contact Name</label>
+                                <p id="emergencyName">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Relationship</label>
+                                <p id="emergencyRelation">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Contact Phone</label>
+                                <p id="emergencyPhone">Loading...</p>
+                            </div>
+                            <div class="profile-field">
+                                <label>Contact Email</label>
+                                <p id="emergencyEmail">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Profile Modal -->
+                <div id="editProfileModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Edit Profile</h3>
+                            <button class="close-btn">&times;</button>
+                        </div>
+                        <form id="editProfileForm">
+                            <div class="form-section">
+                                <h4>Personal Information</h4>
+                                <div class="form-group">
+                                    <label for="editFullName">Full Name</label>
+                                    <input type="text" id="editFullName" name="fullName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editPhone">Phone</label>
+                                    <input type="tel" id="editPhone" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editDob">Date of Birth</label>
+                                    <input type="date" id="editDob" name="dob" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editGender">Gender</label>
+                                    <select id="editGender" name="gender" required>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h4>Emergency Contact</h4>
+                                <div class="form-group">
+                                    <label for="editEmergencyName">Contact Name</label>
+                                    <input type="text" id="editEmergencyName" name="emergencyName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editEmergencyRelation">Relationship</label>
+                                    <input type="text" id="editEmergencyRelation" name="emergencyRelation" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editEmergencyPhone">Contact Phone</label>
+                                    <input type="tel" id="editEmergencyPhone" name="emergencyPhone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editEmergencyEmail">Contact Email</label>
+                                    <input type="email" id="editEmergencyEmail" name="emergencyEmail" required>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                <button type="button" class="btn btn-secondary" id="cancelEdit">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html> 
