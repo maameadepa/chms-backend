@@ -9,6 +9,7 @@ const authRoutes        = require('./routes/auth');
 const hostelsRoutes     = require('./routes/hostels');
 const applicationsRoutes= require('./routes/applications');
 const roomsRoutes        = require('./routes/rooms');
+const notificationsRoutes = require('./routes/notifications');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use('/api/auth',        authRoutes);
 app.use('/api/rooms',       roomsRoutes);
 app.use('/api/hostels',     hostelsRoutes);
 app.use('/api/applications',applicationsRoutes);
+app.use('/api/notifications', notificationsRoutes);
 
 // catch-all: serve index.html for non-API routes
 app.get(/^(?!\/api\/).*/, (req, res) => {

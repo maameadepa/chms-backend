@@ -1,6 +1,7 @@
 const express = require('express');
 const db = require('../db');
 const router = express.Router();
+const { authenticateToken } = require('../middleware/auth');
 
 // GET all rooms
 router.get('/', async (req, res) => {
@@ -17,7 +18,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET one room by ID
-router.get('/:id', async (req, res) => {
+router.get('/:id', authenticateToken, async (req, res) => {
   const roomId = parseInt(req.params.id, 10);
   try {
     const result = await db.query(
